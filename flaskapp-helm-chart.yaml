@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: flaskapp
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: flaskapp
+      sourceRef:
+        kind: HelmRepository
+        name: flaskapp
+  interval: 10m0s
+
